@@ -5,6 +5,26 @@
         1,
         null
       ],
+      "/home/user/Workspace/social-recipes/app/models/cuisine.rb": [
+        1,
+        null
+      ],
+      "/home/user/Workspace/social-recipes/app/models/preference.rb": [
+        1,
+        null
+      ],
+      "/home/user/Workspace/social-recipes/app/models/recipe.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/user/Workspace/social-recipes/app/models/type.rb": [
+        1,
+        1,
+        null
+      ],
       "/home/user/Workspace/social-recipes/app/controllers/recipes_controller.rb": [
         1,
         null
@@ -17,6 +37,6 @@
         null
       ]
     },
-    "timestamp": 1454638370
+    "timestamp": 1454693413
   }
 }

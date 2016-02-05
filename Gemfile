@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.2.1'
 gem 'rails', '4.2.5'
 gem "therubyracer"
 gem "less-rails"
@@ -16,6 +17,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 
 group :development, :test do
+  gem 'pry'
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'capybara'
@@ -23,7 +25,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'pry'
   gem 'spring'
   gem 'simplecov', require: false
 end

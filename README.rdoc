@@ -1,28 +1,19 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an open source web application for creating and sharing recipes
+like a social network.
 
-Things you may want to cover:
+This is built on Ruby on Rails.
 
-* Ruby version
+* Ruby version: 2.2.1
 
-* System dependencies
+* Dependencies: Devise, carrierwave, cloudinary, responders,
+                twitter-bootstrap-rails, therubyracer,
+                less-rails and factory_girl_rails
 
-* Configuration
+* This project uses Rspec. To run the test suite just type rspec
 
-* Database creation
+* To create its database just run rake db:migrate, on development instances
+      the default database is SQLite3
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Remember to bundle install right after cloning
