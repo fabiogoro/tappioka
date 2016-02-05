@@ -1,0 +1,16 @@
+pt-BR:
+  site_name: Tappioka
+  hello: Bem vindo ao Tappioka. Aqui você encontra e compartilha receitas
+         de forma simple e rápida. Vamos lá, chef?
+  sign_up: Cadastre-se
+  home: Início
+  about: Sobre
+  log_in: Entrar
+  footer: © Fábio Goródscy
+  github: Acesse o GitHub
+
+  recipes:
+    about:
+      description: Esta aplicação foi desenvolvida por Fábio Goródscy durante
+                   a Campus Code. Foi utilizado Ruby on Rails, Bootstrap e Heroku.
+                   O projeto é open source, para mais informações acesse o repositório.
