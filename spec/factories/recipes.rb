@@ -6,7 +6,7 @@ FactoryGirl.define do
     preference
     servings 10
     ready_in 10.minutes
-    difficulty 'Hard'
+    difficulty 'Difícil'
     ingredients '1 lata de leite condensado'
     directions 'Esquente a lata em banho maria por 15 minutos. Espere esfriar e abra a lata'
   end

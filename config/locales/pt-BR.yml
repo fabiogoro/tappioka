@@ -9,8 +9,30 @@ pt-BR:
   footer: © Fábio Goródscy
   github: Acesse o GitHub
 
+  minutes: minutos
+  easy: Fácil
+  medium: Intermediário
+  hard: Difícil
+  cancel: Cancelar
+
   recipes:
+    new:
+      new: Nova receita
     about:
       description: Esta aplicação foi desenvolvida por Fábio Goródscy durante
                    a Campus Code. Foi utilizado Ruby on Rails, Bootstrap e Heroku.
                    O projeto é open source, para mais informações acesse o repositório.
+  activerecord:
+    models:
+      recipe: Receita
+    attributes:
+      recipe:
+        name: Nome
+        ingredients: Ingredientes
+        directions: Modo de preparo
+        difficulty: "Dificuldade"
+        ready_in: "Pronto em"
+        cuisine_id: Cozinha
+        type_id: Tipo
+        preference_id: Preferência
+        servings: Porções

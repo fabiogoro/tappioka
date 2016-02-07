@@ -1,0 +1,76 @@
+<div class="col-xs-12">
+  <%= form_for @recipe, html: {class: "form-horizontal"} do |f| %>
+    <div class="form-group">
+      <p><%= f.label :name %><br>
+      <%= f.text_field :name, class:"title col-xs-12" %></p>
+    </div>
+
+    <table class="form-group col-xs-12">
+      <tr>
+        <td class="col-xs-4">
+            <%= f.label :cuisine_id %>
+        </td>
+        <td class="col-xs-4">
+            <%= f.label :type_id %>
+        </td>
+        <td class="col-xs-4">
+            <%= f.label :preference_id %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.collection_select :cuisine_id, @cuisines, :id, :name, {}, class: "styled-select" %>
+        </td>
+        <td>
+          <%= f.collection_select :type_id, @types, :id, :name, {}, class: "styled-select" %>
+        </td>
+        <td>
+          <%= f.collection_select :preference_id, @preferences, :id, :name, {}, class: "styled-select" %>
+        </td>
+      </tr>
+    </table>
+
+    <table class="form-group col-xs-12">
+      <tr>
+        <td class="col-xs-6">
+          <%= f.label :ingredients %><br>
+          <%= f.text_area :ingredients, class: "styled-text" %>
+        </td>
+        <td class="col-xs-6">
+          <%= f.label :directions %><br>
+          <%= f.text_area :directions, class: "styled-text" %>
+        </td>
+      </tr>
+    </table>
+
+    <table class="form-group col-xs-12">
+      <tr>
+        <td class="col-xs-4">
+          <%= f.label :difficulty %><br>
+          <div class="btn-group" data-toggle="buttons">
+            <% [[t(:easy), 1], [t(:medium), 2], [t(:hard), 3]].each do |c| -%>
+              <label class="btn styled-radio active">
+                <input type="radio" name='recipe[difficulty]' value='<%= c.first %>'>
+                <i class="fa fa-circle-o fa-2x"></i>
+                <i class="fa fa-check-circle-o fa-2x"></i>
+                <span> <%= c.first %></span>
+              </label><br>
+            <% end %>
+          </div>
+        </td>
+        <td class="col-xs-4 styled-time-input">
+          <%= f.label :ready_in %><br>
+          <%= f.text_field :ready_in, class:"top" %><b> <%= t :minutes %></b>
+        </td>
+        <td class="col-xs-4 styled-time-input">
+          <%= f.label :servings %><br>
+          <%= f.text_field :servings, class:"top" %></b>
+        </td>
+      </tr>
+    </table>
+
+    <div class="btn-group pull-right">
+      <%= link_to t(:cancel), root_path, class: "btn btn-danger" %><%= f.submit "Salvar", class: "btn btn-success" %>
+    </div>
+  <% end %>
+</div>
