@@ -28,6 +28,12 @@
   resize: vertical;;
 }
 
+.image-frame img{
+  width: 100%;
+  height: 300px;
+  margin: 10px;
+}
+
  .title{
    font-size: 30px;
  }

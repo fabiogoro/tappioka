@@ -1,5 +1,10 @@
 class RecipesController < ApplicationController
 
+  def show
+    @recipe = Recipe.find(params[:id])
+    respond_with @recipe
+  end
+
   def new
     @recipe = Recipe.new
     @cuisines = Cuisine.all
@@ -22,6 +27,8 @@ class RecipesController < ApplicationController
                                      :servings,
                                      :directions,
                                      :ready_in,
-                                     :difficulty)
+                                     :difficulty,
+                                     :photo,
+                                     :photo_cache)
     end
 end

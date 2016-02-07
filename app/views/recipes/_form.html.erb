@@ -1,8 +1,18 @@
 <div class="col-xs-12">
-  <%= form_for @recipe, html: {class: "form-horizontal"} do |f| %>
+  <%= form_for @recipe, html: { multipart: true, class: "form-horizontal"} do |f| %>
     <div class="form-group">
       <p><%= f.label :name %><br>
       <%= f.text_field :name, class:"title col-xs-12" %></p>
+    </div>
+
+    <div class="form-group col-xs-12">
+      <p>
+        <%= f.label :photo %>
+        <div class='image-frame'>
+          <%= image_tag(@recipe.photo_url) if @recipe.photo? %>
+        </div>
+        <%= f.file_field :photo, class: 'upload' %>
+      </p>
     </div>
 
     <table class="form-group col-xs-12">
@@ -64,7 +74,7 @@
         </td>
         <td class="col-xs-4 styled-time-input">
           <%= f.label :servings %><br>
-          <%= f.text_field :servings, class:"top" %></b>
+          <%= f.text_field :servings, class:"top" %><b> <%= t :plates %></b>
         </td>
       </tr>
     </table>

@@ -13,7 +13,9 @@ pt-BR:
   easy: Fácil
   medium: Intermediário
   hard: Difícil
+  remove_photo: Remover foto
   cancel: Cancelar
+  plates: porções
 
   recipes:
     new:
@@ -35,4 +37,5 @@ pt-BR:
         cuisine_id: Cozinha
         type_id: Tipo
         preference_id: Preferência
-        servings: Porções
+        servings: Rendimento
+        photo: Foto

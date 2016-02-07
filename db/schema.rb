@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20160205170246) do
     t.integer  "type_id"
     t.integer  "preference_id"
     t.integer  "servings"
-    t.integer     "ready_in"
+    t.integer  "ready_in"
     t.string   "difficulty"
     t.text     "ingredients"
     t.text     "directions"
