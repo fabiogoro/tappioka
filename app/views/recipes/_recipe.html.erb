@@ -1,0 +1,18 @@
+<a href="<%= recipe_path(recipe) %>" class="recipe-main">
+  <table class="recipe-main-table">
+    <tr>
+      <td class="thumb">
+        <%= image_tag(recipe.photo_url(:thumbnail), alt: recipe.name ) if recipe.photo? %>
+      </td>
+      <td class="info">
+        <h4><%= recipe.name %></h4>
+        <p>
+          <%= t 'activerecord.attributes.recipe.preference_id' %>: <%= recipe.preference.name %><br>
+          <%= t 'activerecord.attributes.recipe.type_id' %>: <%= recipe.type.name %><br>
+          <%= t 'activerecord.attributes.recipe.cuisine_id' %>: <%= recipe.cuisine.name %><br>
+          <%= t 'activerecord.attributes.recipe.difficulty' %>: <%= recipe.difficulty %>
+        </p>
+      </td>
+    </tr>
+  </table>
+</a>

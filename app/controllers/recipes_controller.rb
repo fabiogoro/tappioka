@@ -5,6 +5,10 @@ class RecipesController < ApplicationController
     respond_with @recipe
   end
 
+  def index
+    @recipes = Recipe.all
+  end
+
   def new
     @recipe = Recipe.new
     @cuisines = Cuisine.all

@@ -6,4 +6,8 @@ class PhotoUploader < CarrierWave::Uploader::Base
   def public_id
     return model.name
   end
+
+  version :thumbnail do
+    resize_to_fill(120, 120)
+  end
 end
