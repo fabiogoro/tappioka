@@ -47,6 +47,78 @@
         1,
         null
       ],
+      "/home/user/Workspace/social-recipes/app/controllers/cuisines_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/user/Workspace/social-recipes/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/user/Workspace/social-recipes/app/controllers/preferences_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/user/Workspace/social-recipes/app/controllers/types_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/home/user/Workspace/social-recipes/app/controllers/recipes_controller.rb": [
         1,
         null,
@@ -86,32 +158,8 @@
         null,
         null,
         null
-      ],
-      "/home/user/Workspace/social-recipes/app/controllers/application_controller.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/home/user/Workspace/social-recipes/app/controllers/cuisines_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1454961386
+    "timestamp": 1454964790
   }
 }
