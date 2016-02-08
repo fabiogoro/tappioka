@@ -32,6 +32,14 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/home/user/Workspace/social-recipes/app/models/type.rb": [
@@ -43,6 +51,10 @@
         1,
         null,
         1,
+        2,
+        2,
+        null,
+        null,
         1,
         1,
         null,
@@ -100,6 +112,6 @@
         0
       ]
     },
-    "timestamp": 1454888920
+    "timestamp": 1454961386
   }
 }

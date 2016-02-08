@@ -1,28 +1,36 @@
 <div class="recipe row">
   <h1><%= @recipe.name %></h1>
   <div class="image-frame">
-    <%= image_tag(@recipe.photo_url, alt: @recipe.name ) if @recipe.photo? %>
+    <%= image_tag(@recipe.photo_url(:full), alt: @recipe.name ) if @recipe.photo? %>
   </div>
   <table class="col-xs-12 recipe-table">
     <tr>
       <td class="preference">
-          <%= t 'activerecord.attributes.recipe.preference_id' %>: <%= @recipe.preference.name %>
+        <%= t 'activerecord.attributes.recipe.cuisine_id' %>: <%= @recipe.cuisine.name %>
       </td>
       <td class="type">
         <%= t 'activerecord.attributes.recipe.type_id' %>: <%= @recipe.type.name %>
       </td>
       <td class="cuisine">
-        <%= t 'activerecord.attributes.recipe.cuisine_id' %>: <%= @recipe.cuisine.name %>
+        <%= t 'activerecord.attributes.recipe.preference_id' %>: <%= @recipe.preference.name %>
       </td>
     </tr>
   </table>
-  <table class="col-xs-12 recipe-table">
+  <table class="col-xs-12 recipe-table content">
     <tr>
       <td>
-        <h3><%= t 'activerecord.attributes.recipe.ingredients' %>:</h3> <p class="styled-font"><%= @recipe.ingredients %></p>
+        <h3><%= t 'activerecord.attributes.recipe.ingredients' %>:</h3>
       </td>
       <td>
-        <h3><%= t 'activerecord.attributes.recipe.directions' %>:</h3> <p class="styled-font"><%= @recipe.directions %></p>
+        <h3><%= t 'activerecord.attributes.recipe.directions' %>:</h3>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= simple_format @recipe.ingredients %>
+      </td>
+      <td>
+        <%= simple_format @recipe.directions %>
       </td>
     </tr>
   </table>
