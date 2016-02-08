@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.last(20)
   end
 
   def new
