@@ -1,0 +1,2 @@
+<% active = " active" if current_page? type_path(type) %>
+<%= link_to type.name, type_path(type), class: "list-group-item list-group-item-info"+active.to_s %>

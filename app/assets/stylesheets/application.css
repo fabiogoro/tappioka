@@ -65,12 +65,27 @@
    margin-bottom: 10px;
    padding-top: 10px;
    border-radius: 10px;
+ }
+
+ .cuisine{
    background: lightpink;
+ }
+
+ .type{
+   background: lightblue;
+ }
+
+ .preference{
+   background: lightgreen;
  }
 
  .recipe{
    text-align: center;
-   margin: 40px;
+   margin-bottom: 40px;
+ }
+
+ .recipe h1{
+   text-align: left;
  }
 
  .recipe-table{
@@ -90,16 +105,41 @@
    margin-top: 0;
  }
 
- .preference{
-   background: lightpink;
+ .categories{
+   border-bottom: black solid 2px;
+   margin: 5px;
+   width: 100%;
  }
 
- .type{
-   background: lightblue;
+ .categories a{
+   color: #333;
  }
 
- .cuisine{
-   background: lightgreen;
+ .categories .cuisine{
+   padding: 10px;
+   border-bottom: black solid 2px;
+ }
+
+ .categories .cuisine:hover{
+   background: lightcoral;
+ }
+
+ .categories .type{
+   padding: 10px;
+   border-bottom: black solid 2px;
+ }
+
+ .categories .type:hover{
+   background: skyblue;
+ }
+
+ .categories .preference{
+   padding: 10px;
+   border-bottom: black solid 2px;
+ }
+
+ .categories .preference:hover{
+   background: mediumseagreen;
  }
 
  /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -131,7 +171,7 @@
 
  /* Customize container */
  @media (min-width: 768px) {
-   .container {
+   .container .fixed-width {
      max-width: 730px;
    }
  }

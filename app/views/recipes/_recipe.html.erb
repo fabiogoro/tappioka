@@ -1,5 +1,5 @@
 <a href="<%= recipe_path(recipe) %>" class="recipe-main">
-  <table class="recipe-main-table">
+  <table class="recipe-main-table <%= color %>">
     <tr>
       <td class="thumb">
         <%= image_tag(recipe.photo_url(:thumbnail), alt: recipe.name ) if recipe.photo? %>

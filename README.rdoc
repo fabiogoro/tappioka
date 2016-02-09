@@ -7,13 +7,21 @@ This is built on Ruby on Rails.
 
 * Ruby version: 2.2.1
 
-* Dependencies: Devise, carrierwave, cloudinary, responders,
-                twitter-bootstrap-rails, therubyracer,
-                less-rails and factory_girl_rails
+* Dependencies:
+      devise
+      carrierwave
+      cloudinary
+      responders
+      twitter-bootstrap-rails
+      therubyracer
+      less-rails
+      factory_girl_rails
 
 * This project uses Rspec. To run the test suite just type rspec
 
-* To create its database just run rake db:migrate, on development instances
-      the default database is SQLite3
+* To create its database:
+      Run rake db:migrate.
+      On development the default database is SQLite3.
+      On production the default database is PostgreSQL.
 
 * Remember to bundle install right after cloning

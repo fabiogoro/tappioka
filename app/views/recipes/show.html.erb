@@ -1,50 +1,56 @@
-<div class="recipe row">
-  <h1><%= @recipe.name %></h1>
-  <div class="image-frame">
-    <%= image_tag(@recipe.photo_url(:full), alt: @recipe.name ) if @recipe.photo? %>
+<%= render 'sidebar' %>
+<div class="container fixed-width col-sm-9">
+  <div class="recipe row">
+    <h1><%= @recipe.name %></h1>
+    <div class="image-frame">
+      <%= image_tag(@recipe.photo_url(:full), alt: @recipe.name ) if @recipe.photo? %>
+    </div>
+    <div class="categories">
+        <a href=" <%= cuisine_path(@recipe.cuisine) %>">
+          <div class="cuisine col-xs-4"><%= t 'activerecord.attributes.recipe.cuisine_id' %>: <%= @recipe.cuisine.name %></div>
+        </a>
+        <a href=" <%= type_path(@recipe.type) %>">
+          <div class="type col-xs-4">
+            <%= t 'activerecord.attributes.recipe.type_id' %>: <%= @recipe.type.name %>
+          </div>
+        </a>
+        <a href=" <%= preference_path(@recipe.preference) %>">
+          <div class="preference col-xs-4">
+            <%= t 'activerecord.attributes.recipe.preference_id' %>: <%= @recipe.preference.name %>
+          </div>
+        </a>
+      </tr>
+    </div>
+    <table class="col-xs-12 recipe-table content">
+      <tr>
+        <td>
+          <h3><%= t 'activerecord.attributes.recipe.ingredients' %>:</h3>
+        </td>
+        <td>
+          <h3><%= t 'activerecord.attributes.recipe.directions' %>:</h3>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= simple_format @recipe.ingredients %>
+        </td>
+        <td>
+          <%= simple_format @recipe.directions %>
+        </td>
+      </tr>
+    </table>
+    <table class="col-xs-12 recipe-table">
+      <tr>
+        <td>
+          <%= t 'activerecord.attributes.recipe.difficulty' %>: <%= @recipe.difficulty %>
+        </td>
+        <td>
+          <%= t 'activerecord.attributes.recipe.ready_in' %>: <%= @recipe.ready_in %> <%= t :minutes %>
+        </td>
+        <td>
+          <%= t 'activerecord.attributes.recipe.servings' %>: <%= @recipe.servings %> <%= t :plates %>
+        </td>
+      </tr>
+    </table>
   </div>
-  <table class="col-xs-12 recipe-table">
-    <tr>
-      <td class="preference">
-        <%= t 'activerecord.attributes.recipe.cuisine_id' %>: <%= @recipe.cuisine.name %>
-      </td>
-      <td class="type">
-        <%= t 'activerecord.attributes.recipe.type_id' %>: <%= @recipe.type.name %>
-      </td>
-      <td class="cuisine">
-        <%= t 'activerecord.attributes.recipe.preference_id' %>: <%= @recipe.preference.name %>
-      </td>
-    </tr>
-  </table>
-  <table class="col-xs-12 recipe-table content">
-    <tr>
-      <td>
-        <h3><%= t 'activerecord.attributes.recipe.ingredients' %>:</h3>
-      </td>
-      <td>
-        <h3><%= t 'activerecord.attributes.recipe.directions' %>:</h3>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <%= simple_format @recipe.ingredients %>
-      </td>
-      <td>
-        <%= simple_format @recipe.directions %>
-      </td>
-    </tr>
-  </table>
-  <table class="col-xs-12 recipe-table">
-    <tr>
-      <td>
-        <%= t 'activerecord.attributes.recipe.difficulty' %>: <%= @recipe.difficulty %>
-      </td>
-      <td>
-        <%= t 'activerecord.attributes.recipe.ready_in' %>: <%= @recipe.ready_in %> <%= t :minutes %>
-      </td>
-      <td>
-        <%= t 'activerecord.attributes.recipe.servings' %>: <%= @recipe.servings %> <%= t :plates %>
-      </td>
-    </tr>
-  </table>
 </div>

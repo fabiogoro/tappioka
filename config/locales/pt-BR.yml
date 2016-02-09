@@ -17,6 +17,10 @@ pt-BR:
   cancel: Cancelar
   plates: porções
   recent_recipes: Últimas receitas
+  categories:
+    cuisines: Cozinhas
+    types: Tipos de comida
+    preferences: Preferências
 
   recipes:
     new:

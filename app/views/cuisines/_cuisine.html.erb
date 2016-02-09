@@ -1,0 +1,2 @@
+<% active = " active" if current_page? cuisine_path(cuisine) %>
+<%= link_to cuisine.name, cuisine_path(cuisine), class: "list-group-item list-group-item-danger"+active.to_s %>
