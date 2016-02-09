@@ -1,5 +1,16 @@
 <div class="form row">
   <%= form_for @cuisine, html: {class: "form-horizontal"} do |f| %>
+    <div id="errors">
+      <% if @cuisine.errors.any? %>
+        <h2><%= t('errors.template.header', count: @cuisine.errors.size, model: t("activerecord.models.cuisine")) %></h2>
+        <h4><%= t('errors.template.body', count: @cuisine.errors.size) %></h4>
+        <ul>
+        <% @cuisine.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      <% end %>
+    </div>
     <div class="form-group">
       <p><%= f.label :name %><br>
       <%= f.text_field :name, class:"title col-xs-12" %></p>

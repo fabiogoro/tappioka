@@ -9,5 +9,6 @@ FactoryGirl.define do
     difficulty 'Difícil'
     ingredients '1 lata de leite condensado'
     directions 'Esquente a lata em banho maria por 15 minutos. Espere esfriar e abra a lata'
+    user
   end
 end

@@ -1,7 +1,7 @@
 <%= render 'sidebar' %>
 <div class="container fixed-width col-sm-9">
   <div class="recipe row">
-    <h1><%= @recipe.name %></h1>
+    <h1><%= @recipe.name %> <%= t :by %> <%= @recipe.user.email %></h1>
     <div class="image-frame">
       <%= image_tag(@recipe.photo_url(:full), alt: @recipe.name ) if @recipe.photo? %>
     </div>
@@ -52,5 +52,8 @@
         </td>
       </tr>
     </table>
+    <div class="btn-group pull-right">
+      <%= link_to t(:back), :back, class: "btn btn-danger" %><%= link_to t(:edit), edit_recipe_path(@recipe), class: "btn btn-success" if current_user == @recipe.user %>
+    </div>
   </div>
 </div>

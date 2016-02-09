@@ -15,7 +15,8 @@ feature 'User visits homepage' do
   end
 
   scenario 'and sees 20 last recipes' do
-    create_list(:recipe, 30)
+    user = create(:user)
+    create_list(:recipe, 30, user: user)
 
     visit root_path
 
@@ -23,9 +24,10 @@ feature 'User visits homepage' do
   end
 
   scenario 'and lists jobs by cuisines' do
+    user = create(:user)
     cuisine = create(:cuisine, name: "Mexicana")
-    recipe = create(:recipe, name: "Nacho", cuisine: cuisine)
-    another_recipe = create(:recipe)
+    recipe = create(:recipe, name: "Nacho", cuisine: cuisine, user: user)
+    another_recipe = create(:recipe, user: user)
 
     visit root_path
     click_on cuisine.name
@@ -36,9 +38,10 @@ feature 'User visits homepage' do
   end
 
   scenario 'and lists jobs by types' do
+    user = create(:user)
     type = create(:type, name: "Salada")
-    recipe = create(:recipe, name: "Salada de alface", type: type)
-    another_recipe = create(:recipe)
+    recipe = create(:recipe, name: "Salada de alface", type: type, user: user)
+    another_recipe = create(:recipe, user: user)
 
     visit root_path
     click_on type.name
@@ -49,9 +52,10 @@ feature 'User visits homepage' do
   end
 
   scenario 'and lists jobs by preferences' do
+    user = create(:user)
     preference = create(:preference, name: "Carnes")
-    recipe = create(:recipe, name: "Bife acebolado", preference: preference)
-    another_recipe = create(:recipe)
+    recipe = create(:recipe, name: "Bife acebolado", preference: preference, user: user)
+    another_recipe = create(:recipe, user: user)
 
     visit root_path
     click_on preference.name

@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :new, :edit, :update]
+  before_action :set_categories, only: [:show, :index, :new, :edit, :update, :create]
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -11,14 +13,28 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @cuisines = Cuisine.all
-    @types = Type.all
-    @preferences = Preference.all
   end
 
   def create
-    @recipe = Recipe.create(recipe_params)
+    @recipe = current_user.recipes.create(recipe_params)
     respond_with @recipe
+  end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+    unless @recipe.user == current_user
+      redirect_to root_path, alert: t(:cant_edit)
+    end
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.user == current_user
+      @recipe.update(recipe_params)
+      respond_with @recipe
+    else
+      redirect_to root_path, alert: t(:cant_edit)
+    end
   end
 
   private

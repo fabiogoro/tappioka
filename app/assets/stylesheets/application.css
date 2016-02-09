@@ -1,32 +1,9 @@
 @import "bootstrap_and_overrides.css.less";
+@import "forms.css.less";
+@import "radio_button.css.less";
+@import "page_defaults.css.less";
+@import "recipe_page.css.less";
 
-
-
- /* Space out content a bit */
- body {
-   padding-top: 20px;
-   padding-bottom: 20px;
- }
-
- .form{
-   margin: 15px;
- }
-
- .styled-time-input{
-   vertical-align: top;
- }
-
- .styled-select {
-   height: 31px;
-   width: 90%;
-   overflow: hidden;
- }
-
-.styled-text{
-  height: 200px;
-  width: 90%;
-  resize: vertical;;
-}
 
 .image-frame img{
   width: 100%;
@@ -34,18 +11,14 @@
   margin: 0 0 10px 5px;
 }
 
-.title{
-  font-size: 30px;
-}
-
-.top{
-  width: 40px;
-  margin-left: 10px;
-}
-
  .thumb img{
    border-radius: 10px;
    margin: 10px;
+ }
+
+ .top{
+   width: 40px;
+   margin-left: 10px;
  }
 
  .info{
@@ -78,183 +51,3 @@
  .preference{
    background: lightgreen;
  }
-
- .recipe{
-   text-align: center;
-   margin-bottom: 40px;
- }
-
- .recipe h1{
-   text-align: left;
- }
-
- .recipe-table{
-   border-bottom: black solid 2px;
-   margin: 5px;
- }
-
- .recipe-table td {
-   padding: 10px;
-   width: 33%
- }
-
- .content td {
-   width: 50%;
-   text-align: left;
-   padding-top: 0;
-   margin-top: 0;
- }
-
- .categories{
-   border-bottom: black solid 2px;
-   margin: 5px;
-   width: 100%;
- }
-
- .categories a{
-   color: #333;
- }
-
- .categories .cuisine{
-   padding: 10px;
-   border-bottom: black solid 2px;
- }
-
- .categories .cuisine:hover{
-   background: lightcoral;
- }
-
- .categories .type{
-   padding: 10px;
-   border-bottom: black solid 2px;
- }
-
- .categories .type:hover{
-   background: skyblue;
- }
-
- .categories .preference{
-   padding: 10px;
-   border-bottom: black solid 2px;
- }
-
- .categories .preference:hover{
-   background: mediumseagreen;
- }
-
- /* Everything but the jumbotron gets side spacing for mobile first views */
- .header,
- .marketing,
- .footer {
-   padding-right: 15px;
-   padding-left: 15px;
- }
-
- /* Custom page header */
- .header {
-   padding-bottom: 20px;
-   border-bottom: 1px solid #e5e5e5;
- }
- /* Make the masthead heading the same height as the navigation */
- .header h3 {
-   margin-top: 0;
-   margin-bottom: 0;
-   line-height: 40px;
- }
-
- /* Custom page footer */
- .footer {
-   padding-top: 19px;
-   color: #777;
-   border-top: 1px solid #e5e5e5;
- }
-
- /* Customize container */
- @media (min-width: 768px) {
-   .container .fixed-width {
-     max-width: 730px;
-   }
- }
- .container-narrow > hr {
-   margin: 30px 0;
- }
-
- /* Main marketing message and sign up button */
- .jumbotron {
-   text-align: center;
-   border-bottom: 1px solid #e5e5e5;
- }
- .jumbotron .btn {
-   padding: 14px 24px;
-   font-size: 21px;
- }
-
- /* Supporting marketing content */
- .marketing {
-   margin: 40px 0;
- }
- .marketing p + h4 {
-   margin-top: 28px;
- }
-
- /* Responsive: Portrait tablets and up */
- @media screen and (min-width: 768px) {
-   /* Remove the padding we set earlier */
-   .header,
-   .marketing,
-   .footer {
-     padding-right: 0;
-     padding-left: 0;
-   }
-   /* Space out the masthead */
-   .header {
-     margin-bottom: 30px;
-   }
-   /* Remove the bottom border on the jumbotron for visual effect */
-   .jumbotron {
-     border-bottom: 0;
-   }
- }
-
-
- /* Radio style */
-
-.styled-radio span {
-  font-size: 1.5em ;
-}
-
-.styled-radio input ~ .fa-circle-o{
-  color: #000;
-  display: inline;
-}
-.styled-radio input ~ .fa-check-circle-o{
-  display: none;
-}
-.styled-radio input:checked ~ .fa-circle-o{
-  display: none;
-}
-.styled-radio input:checked ~ .fa-check-circle-o{
-  color: #7AA3CC;
-  display: inline;
-}
-
-.styled-radio:hover input ~ .fa {
-  color: #7AA3CC;
-}
-
-.styled-radio {
-  font-size: 10px;
-  font-weight: bold;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-
-.styled-radio:active, .styled-radio.active {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-/* End radio style */

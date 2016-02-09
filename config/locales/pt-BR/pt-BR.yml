@@ -2,19 +2,36 @@ pt-BR:
   site_name: Tappioka
   hello: Bem vindo ao Tappioka. Aqui você encontra e compartilha receitas
          de forma simple e rápida. Vamos lá, chef?
+  welcome: Olá, você está logado no Tappioka como %{user}
+  what_to_do: O que deseja fazer hoje?
   sign_up: Cadastre-se
+  create_recipe: Criar receita
+  log_out: Sair
   home: Início
   about: Sobre
   log_in: Entrar
+  email: Endereço de email
+  password: Senha
+  forgot_password: Esqueceu a senha?
+  minumum_characters: "Mínimo de %{min} caracteres"
+  leave_empty_for_keeping: "(deixe em branco se não deseja alterar a senha)"
+  password_needed: "(precisamos da senha atual para confirmar as alterações)"
   footer: © Fábio Goródscy
   github: Acesse o GitHub
 
+  by: por
+  cant_edit: Você não pode alterar a receita de outro usuário!
   minutes: minutos
   easy: Fácil
   medium: Intermediário
   hard: Difícil
   remove_photo: Remover foto
   cancel: Cancelar
+  edit: Editar
+  back: Voltar
+  unhappy: Descontente? Você pode cancelar sua conta aqui.
+  cancel_account: Cancelar conta
+  are_you_sure: Tem certeza?
   plates: porções
   recent_recipes: Últimas receitas
   categories:
@@ -25,6 +42,8 @@ pt-BR:
   recipes:
     new:
       new: Nova receita
+    edit:
+      edit: Editar receita
     about:
       description: Esta aplicação foi desenvolvida por Fábio Goródscy durante
                    a Campus Code. Foi utilizado Ruby on Rails, Bootstrap e Heroku.
@@ -38,28 +57,6 @@ pt-BR:
   preferences:
     new:
       new: Nova preferência de comida
-
-  activerecord:
-    models:
-      recipe: Receita
-      type: Tipo de comida
-      preference: Preferência de comida
-      cuisine: Cozinha
-    attributes:
-      recipe:
-        name: Nome
-        ingredients: Ingredientes
-        directions: Modo de preparo
-        difficulty: "Dificuldade"
-        ready_in: "Pronto em"
-        cuisine_id: Cozinha
-        type_id: Tipo
-        preference_id: Preferência
-        servings: Rendimento
-        photo: Foto
-      cuisine:
-        name: Nome
-      type:
-        name: Nome
-      preference:
-        name: Nome
+  users:
+    edit:
+      edit: Editar usuário

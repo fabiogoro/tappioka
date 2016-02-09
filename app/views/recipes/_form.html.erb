@@ -1,5 +1,17 @@
 <div class="form row">
   <%= form_for @recipe, html: { multipart: true, class: "form-horizontal"} do |f| %>
+    <div id="errors">
+      <% if @recipe.errors.any? %>
+        <h2><%= t('errors.template.header', count: @recipe.errors.size, model: t("activerecord.models.recipe")) %></h2>
+        <h4><%= t('errors.template.body', count: @recipe.errors.size) %></h4>
+        <ul>
+        <% @recipe.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      <% end %>
+    </div>
+
     <div class="form-group">
       <p><%= f.label :name %><br>
       <%= f.text_field :name, class:"title col-xs-12" %></p>
@@ -58,12 +70,12 @@
         <td class="col-xs-4">
           <%= f.label :difficulty %><br>
           <div class="btn-group" data-toggle="buttons">
-            <% [[t(:easy), 1], [t(:medium), 2], [t(:hard), 3]].each do |c| -%>
+            <% [t(:easy), t(:medium), t(:hard)].each do |c| -%>
               <label class="btn styled-radio active">
-                <input type="radio" name='recipe[difficulty]' value='<%= c.first %>'>
+                <input type="radio" name='recipe[difficulty]' value='<%= c %>'>
                 <i class="fa fa-circle-o fa-2x"></i>
                 <i class="fa fa-check-circle-o fa-2x"></i>
-                <span> <%= c.first %></span>
+                <span> <%= c %></span>
               </label><br>
             <% end %>
           </div>

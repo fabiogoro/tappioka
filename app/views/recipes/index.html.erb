@@ -1,9 +1,14 @@
 <%= render 'sidebar' %>
 <div class="container fixed-width col-sm-9">
   <div class="jumbotron">
-    <h1> <%= t :site_name %> </h1>
-    <p class="lead"> <%= t :hello %> </p>
-    <p><a class="btn btn-lg btn-success" href="#" role="button"> <%= t :sign_up %> </a></p>
+    <h1> <%= t :site_name unless current_user %> </h1>
+    <p class="lead"> <%= t(:hello) unless current_user %> </p>
+    <p class="lead"> <%= t(:welcome, user: current_user.email) if current_user %> </p>
+    <p class="lead"> <%= t(:what_to_do) if current_user %> </p>
+    <p>
+      <%= (link_to t(:sign_up), new_user_registration_path, class: "btn btn-lg btn-success", role: "button") unless current_user %>
+      <%= (link_to t(:create_recipe), new_recipe_path, class: "btn btn-lg btn-success", role: "button") if current_user %>
+    </p>
   </div>
 
   <div class="row marketing">

@@ -1,4 +1,5 @@
 class CuisinesController < ApplicationController
+  before_action :set_categories, only: [:show, :index]
 
   def show
     @cuisine = Cuisine.find(params[:id])

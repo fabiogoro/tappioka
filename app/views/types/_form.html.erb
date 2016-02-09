@@ -1,5 +1,16 @@
 <div class="form row">
   <%= form_for @type, html: {class: "form-horizontal"} do |f| %>
+    <div id="errors">
+      <% if @type.errors.any? %>
+        <h2><%= t('errors.template.header', count: @type.errors.size, model: t("activerecord.models.type")) %></h2>
+        <h4><%= t('errors.template.body', count: @type.errors.size) %></h4>
+        <ul>
+        <% @type.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      <% end %>
+    </div>
     <div class="form-group">
       <p><%= f.label :name %><br>
       <%= f.text_field :name, class:"title col-xs-12" %></p>

@@ -1,4 +1,5 @@
 class TypesController < ApplicationController
+  before_action :set_categories, only: [:show, :index]
 
   def show
     @type = Type.find(params[:id])

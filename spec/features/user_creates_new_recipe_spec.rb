@@ -1,9 +1,10 @@
 require 'rails_helper'
 
-feature 'User visits homepage' do
+feature 'User creates new recipe' do
   scenario 'successfully' do
     recipe = build(:recipe)
 
+    login
     visit new_recipe_path
 
     fill_in 'Nome', with: recipe.name
@@ -21,5 +22,14 @@ feature 'User visits homepage' do
 
     expect(current_path).to eq '/recipes/1'
     expect(page).to have_css('img')
+  end
+
+  scenario 'without logging in' do
+    recipe = build(:recipe)
+
+    visit new_recipe_path
+
+    expect(current_path).to eq '/users/sign_in'
+    expect(page).to have_content 'Para continuar, efetue login ou registre-se.'
   end
 end

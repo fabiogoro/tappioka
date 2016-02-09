@@ -1,5 +1,16 @@
 <div class="form row">
   <%= form_for @preference, html: {class: "form-horizontal"} do |f| %>
+    <div id="errors">
+      <% if @preference.errors.any? %>
+        <h2><%= t('errors.template.header', count: @preference.errors.size, model: t("activerecord.models.preference")) %></h2>
+        <h4><%= t('errors.template.body', count: @preference.errors.size) %></h4>
+        <ul>
+        <% @preference.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      <% end %>
+    </div>
     <div class="form-group">
       <p><%= f.label :name %><br>
       <%= f.text_field :name, class:"title col-xs-12" %></p>
