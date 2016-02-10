@@ -7,7 +7,12 @@ Rails.application.routes.draw do
       delete 'favourite'
     end
   end
-  resources :cuisines, only: [:new, :create, :show]
+  resources :cuisines, only: [:new, :create, :show, :index] do
+    member do
+      post 'like'
+      delete 'like'
+    end
+  end
   resources :types, only: [:new, :create, :show]
   resources :preferences, only: [:new, :create, :show]
   root 'recipes#index'

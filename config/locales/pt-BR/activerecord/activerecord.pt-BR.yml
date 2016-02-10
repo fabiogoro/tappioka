@@ -25,6 +25,8 @@ pt-BR:
       preference:
         name: Nome
       user:
+        name: Nome
+        city: Cidade
         email: Endereço de email
         password: Senha
         password_confirmation: Confirmação da senha

@@ -18,16 +18,23 @@ pt-BR:
   password_needed: "(precisamos da senha atual para confirmar as alterações)"
   footer: © Fábio Goródscy
   github: Acesse o GitHub
+  name: Nome
+  city: Cidade
+  update: Atualizar
 
   by: por
   fans: favoritaram
+  cuisine_preference: Cozinhas Preferidas
   favourite_recipes: Receitas Favoritas
   published_recipes: Minhas Receitas
+  pick_your_favourite: Escolha suas Cozinhas preferidas
   cant_edit: Você não pode alterar a receita de outro usuário!
   minutes: minutos
   easy: Fácil
   medium: Intermediário
   hard: Difícil
+  edit_cuisines: Editar Cozinhas
+  edit_profile: Editar Perfil
   remove_photo: Remover foto
   cancel: Cancelar
   edit: Editar
@@ -38,7 +45,9 @@ pt-BR:
   add_favourite: Adicionar a Favoritas
   remove_favourite: Remover de Favoritas
   succefully_add_favorite: Adicionou a Receita a suas Favoritas com sucesso!
+  succefully_add_cuisine: Adicionou a Cozinha a suas Preferidas com sucesso!
   succefully_remove_favorite: Removeu a Receita de suas Favoritas com sucesso.
+  succefully_remove_cuisine: Removeu a Cozinha de suas Preferidas com sucesso.
   unhappy: Descontente? Você pode cancelar sua conta aqui.
   cancel_account: Cancelar conta
   are_you_sure: Tem certeza?

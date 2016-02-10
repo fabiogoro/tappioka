@@ -1,0 +1,9 @@
+<%= render 'sidebar' %>
+<div class="container fixed-width col-sm-9">
+  <h1> <%= t :pick_your_favourite %> </h1>
+  <% @cuisines.each do |cuisine| %>
+    <% color = "btn btn-danger fa fa-heart" %>
+    <% color << "-o" unless cuisine.users.exists?(current_user.id) %>
+    <p><%= link_to (" "+ cuisine.name), like_cuisine_path(cuisine), method: "post", class: color %> <b><%=  %></b></p>
+  <% end %>
+</div>

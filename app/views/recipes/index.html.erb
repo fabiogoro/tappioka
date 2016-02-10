@@ -8,7 +8,8 @@
     <p>
       <%= (link_to t(:sign_up), new_user_registration_path, class: "btn btn-lg btn-success", role: "button") unless current_user %>
       <%= (link_to t(:create_recipe), new_recipe_path, class: "btn btn-lg btn-success", role: "button") if current_user %>
-      <%= (link_to t(:favourite_recipes), user_path(current_user), class: "btn btn-lg btn-success", role: "button") if current_user %>
+      <%= (link_to t(:published_recipes), user_path(current_user), class: "btn btn-lg btn-success", role: "button") if current_user %>
+      <%= (link_to t(:edit_profile), edit_user_registration_path, class: "btn btn-lg btn-success", role: "button") if current_user %>
     </p>
   </div>
 

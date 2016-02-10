@@ -1,6 +1,26 @@
 <%= render 'sidebar' %>
 <div class="container fixed-width col-sm-9">
+  <p class="col-xs-12">
+    <%= link_to t(:edit_profile), edit_user_registration_path, class: "btn btn-warning pull-right" if @user == current_user %>
+  </p>
   <h1><%= @user.email %></h1>
+  <p> <b><%= t :name %>:</b> <%= @user.name %></p>
+  <p> <b> <%= t :city %>:</b> <%= @user.city %></p>
+  <p>
+    <%= link_to " ", @user.facebook, class: "btn btn-primary fa fa-facebook" unless @user.facebook.empty? %>
+    <%= link_to " ", @user.twitter, class: "btn btn-info fa fa-twitter" unless @user.twitter.empty? %>
+  </p>
+  <p class="col-xs-12">
+    <%= link_to t(:edit_cuisines), cuisines_path, class: "btn btn-warning pull-right" if @user == current_user %>
+  </p>
+  <p>
+    <b><%= t :cuisine_preference %>: </b>
+  </p>
+  <p class="btn-group">
+    <% @user.cuisines.each do |cuisine| %>
+      <%= link_to cuisine.name, cuisine_path(cuisine), class: "btn btn-danger" %>
+    <% end %>
+  </p>
   <div class="row marketing">
     <div class="col-lg-6">
       <h2> <%= t :favourite_recipes %></h2>
