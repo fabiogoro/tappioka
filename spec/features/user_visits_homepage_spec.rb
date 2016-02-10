@@ -20,7 +20,16 @@ feature 'User visits homepage' do
 
     visit root_path
 
-    expect(page).to have_selector 'a.recipe-main', count: 20
+    expect(page).to have_selector 'table.recipe-main-table.type', count: 20
+  end
+
+  scenario 'and sees 20 most favourite recipes' do
+    user = create(:user)
+    create_list(:recipe, 30, user: user)
+
+    visit root_path
+
+    expect(page).to have_selector 'table.recipe-main-table.cuisine', count: 20
   end
 
   scenario 'and lists jobs by cuisines' do

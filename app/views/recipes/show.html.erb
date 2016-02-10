@@ -1,7 +1,7 @@
 <%= render 'sidebar' %>
 <div class="container fixed-width col-sm-9">
   <div class="recipe row">
-    <h1><%= @recipe.name %> <%= t :by %> <%= @recipe.user.email %></h1>
+    <h1><%= @recipe.name %> <%= t :by %> <%= link_to @recipe.user.email, user_path(@recipe.user) %></h1>
     <div class="image-frame">
       <%= image_tag(@recipe.photo_url(:full), alt: @recipe.name ) if @recipe.photo? %>
     </div>
@@ -50,10 +50,17 @@
         <td>
           <%= t 'activerecord.attributes.recipe.servings' %>: <%= @recipe.servings %> <%= t :plates %>
         </td>
+        <td>
+          <%= @recipe.fans.count %> <%= t :fans %>
+        </td>
       </tr>
     </table>
     <div class="btn-group pull-right">
-      <%= link_to t(:back), :back, class: "btn btn-danger" %><%= link_to t(:edit), edit_recipe_path(@recipe), class: "btn btn-success" if current_user == @recipe.user %>
+      <%= link_to t(:back), root_path, class: "btn btn-danger" %>
+      <%= link_to t(:add_favourite), favourite_recipe_path(@recipe), method: "post", class: "btn btn-primary" if current_user && !@recipe.fans.exists?(current_user.id) %>
+      <%= link_to t(:remove_favourite), favourite_recipe_path(@recipe), method: "delete", class: "btn btn-default" if current_user && @recipe.fans.exists?(current_user.id) %>
+      <%= link_to t(:edit), edit_recipe_path(@recipe), class: "btn btn-success" if current_user == @recipe.user %>
+      <%= link_to t(:delete), recipe_path(@recipe), data: { confirm: t(:are_you_sure) }, method: "delete", class: "btn btn-warning" if current_user == @recipe.user %>
     </div>
   </div>
 </div>

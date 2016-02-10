@@ -1,0 +1,14 @@
+<%= render 'sidebar' %>
+<div class="container fixed-width col-sm-9">
+  <h1><%= @user.email %></h1>
+  <div class="row marketing">
+    <div class="col-lg-6">
+      <h2> <%= t :favourite_recipes %></h2>
+      <%= render @user.favourites, color: "cuisine" %>
+    </div>
+    <div class="col-lg-6">
+      <h2> <%= t :published_recipes %></h2>
+      <%= render @user.recipes, color: "type" %>
+    </div>
+  </div>
+</div>

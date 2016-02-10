@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :new, :edit, :update]
-  before_action :set_categories, only: [:show, :index, :new, :edit, :update, :create]
+  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :favourite, :destroy]
+  before_action :set_categories, only: [:show, :index, :new, :edit, :update, :create, :favourite, :destroy]
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -8,7 +8,8 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.last(20)
+    @recipes = Recipe.order(created_at: :desc).limit(20)
+    @favourites = Recipe.order_by_favourites.first(20)
   end
 
   def new
@@ -34,6 +35,28 @@ class RecipesController < ApplicationController
       respond_with @recipe
     else
       redirect_to root_path, alert: t(:cant_edit)
+    end
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    if @recipe.delete
+      redirect_to root_path, notice: t(:succefully_removed_recipe)
+    else
+      redirect_to @recipe, notice: t(:unsuccefully_removed_recipe)
+    end
+  end
+
+  def favourite
+    @recipe = Recipe.find(params[:id])
+    unless @recipe.fans.exists?(current_user.id)
+      @recipe.fans << current_user
+      @recipe.save
+      redirect_to @recipe, notice: t(:succefully_add_favorite)
+    else
+      @recipe.fans.delete(current_user)
+      @recipe.save
+      redirect_to @recipe, notice: t(:succefully_remove_favorite)
     end
   end
 

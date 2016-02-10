@@ -20,6 +20,9 @@ pt-BR:
   github: Acesse o GitHub
 
   by: por
+  fans: favoritaram
+  favourite_recipes: Receitas Favoritas
+  published_recipes: Minhas Receitas
   cant_edit: Você não pode alterar a receita de outro usuário!
   minutes: minutos
   easy: Fácil
@@ -28,7 +31,14 @@ pt-BR:
   remove_photo: Remover foto
   cancel: Cancelar
   edit: Editar
+  delete: Deletar
   back: Voltar
+  succefully_removed_recipe: Removeu a Receita com sucesso.
+  unsuccefully_removed_recipe: Não foi possível remover a Receita. Tente novamente mais tarde.
+  add_favourite: Adicionar a Favoritas
+  remove_favourite: Remover de Favoritas
+  succefully_add_favorite: Adicionou a Receita a suas Favoritas com sucesso!
+  succefully_remove_favorite: Removeu a Receita de suas Favoritas com sucesso.
   unhappy: Descontente? Você pode cancelar sua conta aqui.
   cancel_account: Cancelar conta
   are_you_sure: Tem certeza?

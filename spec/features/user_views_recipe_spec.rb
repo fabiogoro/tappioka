@@ -16,4 +16,27 @@ feature 'User views recipe' do
     expect(page).to have_content(recipe.directions)
     expect(page).to have_content(recipe.ingredients)
   end
+
+  scenario 'and favourite it' do
+    recipe = create(:recipe)
+
+    login
+    visit recipe_path(recipe)
+    click_on 'Adicionar a Favoritas'
+
+    expect(page).to have_content("Adicionou a Receita a suas Favoritas com sucesso!")
+    expect(page).to have_content("1 favoritaram")
+  end
+
+  scenario 'and remove from favourites' do
+    recipe = create(:recipe)
+
+    login
+    visit recipe_path(recipe)
+    click_on 'Adicionar a Favoritas'
+    click_on 'Remover de Favoritas'
+
+    expect(page).to have_content("Removeu a Receita de suas Favoritas com sucesso.")
+    expect(page).to have_content("0 favoritaram")
+  end
 end
