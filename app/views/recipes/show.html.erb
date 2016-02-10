@@ -3,7 +3,7 @@
   <div class="recipe row">
     <h1><%= @recipe.name %> <%= t :by %> <%= link_to @recipe.user.email, user_path(@recipe.user) %></h1>
     <div class="image-frame">
-      <%= image_tag(@recipe.photo_url(:full), alt: @recipe.name ) if @recipe.photo? %>
+      <%= image_tag(@recipe.photo_url(:full), alt: @recipe.name ) %>
     </div>
     <div class="categories">
         <a href=" <%= cuisine_path(@recipe.cuisine) %>">

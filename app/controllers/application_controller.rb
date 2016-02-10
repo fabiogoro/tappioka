@@ -20,4 +20,10 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.for(:account_update) << :facebook
       devise_parameter_sanitizer.for(:account_update) << :twitter
     end
+
+    def check_admin
+      unless current_user && current_user.is_admin?
+        redirect_to root_path, alert: t(:not_admin)
+      end
+    end
 end

@@ -1,5 +1,6 @@
 class PreferencesController < ApplicationController
   before_action :set_categories, only: [:show, :index]
+  before_action :check_admin, only: [:create, :new]
 
   def show
     @preference = Preference.find(params[:id])

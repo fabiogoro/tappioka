@@ -29,6 +29,7 @@ pt-BR:
   published_recipes: Minhas Receitas
   pick_your_favourite: Escolha suas Cozinhas preferidas
   cant_edit: Você não pode alterar a receita de outro usuário!
+  not_admin: Você não pode criar categorias pois não é administrador.
   minutes: minutos
   easy: Fácil
   medium: Intermediário

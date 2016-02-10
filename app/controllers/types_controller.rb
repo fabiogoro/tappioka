@@ -1,5 +1,6 @@
 class TypesController < ApplicationController
   before_action :set_categories, only: [:show, :index]
+  before_action :check_admin, only: [:create, :new]
 
   def show
     @type = Type.find(params[:id])
