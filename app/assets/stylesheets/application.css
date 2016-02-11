@@ -38,6 +38,9 @@
    margin-bottom: 10px;
    padding-top: 10px;
    border-radius: 10px;
+   width: 310px;
+   white-space: nowrap;
+   text-overflow: ellipsis;
  }
 
  .cuisine{
