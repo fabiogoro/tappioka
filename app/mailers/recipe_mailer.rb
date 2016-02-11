@@ -1,9 +1,10 @@
 class RecipeMailer < ApplicationMailer
   default from: 'falecomtappioka@gmail.com'
 
-  def recipe_email(recipe, user)
+  def recipe_email(recipe, user, email)
     @recipe = recipe
     @user = user
-    mail(to: @user.email, subject: "Estou compartilhando uma receita: "+@recipe.name)
+    @email = email
+    mail(to: @email, subject: "Estou compartilhando uma receita: "+@recipe.name)
   end
 end

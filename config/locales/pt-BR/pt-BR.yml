@@ -40,6 +40,9 @@ pt-BR:
   cancel: Cancelar
   edit: Editar
   delete: Deletar
+  send: Enviar
+  send_to: Enviar para...
+  sent: Email foi enviado com sucesso!
   back: Voltar
   succefully_removed_recipe: Removeu a Receita com sucesso.
   unsuccefully_removed_recipe: Não foi possível remover a Receita. Tente novamente mais tarde.

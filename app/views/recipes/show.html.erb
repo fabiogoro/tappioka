@@ -55,9 +55,14 @@
         </td>
       </tr>
     </table>
-    <div>
-      <%= link_to t(:send), mail_recipe_path(@recipe), method: "post", class: "btn btn-info" %>
-    </div>
+    <%= form_tag mail_recipe_path(@recipe) do %>
+      <div class="input-group pull-left col-xs-4">
+        <%= email_field_tag :email, "", class:"form-control", placeholder: t(:send_to) %>
+        <span class="input-group-btn">
+          <%= submit_tag t(:send), class: "btn btn-info" %>
+        </span>
+      </div>
+    <% end %>
     <div class="btn-group pull-right">
       <%= link_to t(:back), root_path, class: "btn btn-danger" %>
       <%= link_to t(:add_favourite), favourite_recipe_path(@recipe), method: "post", class: "btn btn-primary" if current_user && !@recipe.fans.exists?(current_user.id) %>

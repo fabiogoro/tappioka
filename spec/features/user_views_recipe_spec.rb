@@ -28,6 +28,18 @@ feature 'User views recipe' do
     expect(page).to have_content("1 favoritaram")
   end
 
+  scenario 'and email it' do
+    recipe = create(:recipe)
+
+    login
+    visit recipe_path(recipe)
+    fill_in :email, with: 'fabiogo@outlook.com'
+    click_on 'Enviar'
+
+    expect(page).to have_content("Email foi enviado com sucesso!")
+    expect(ActionMailer::Base.deliveries.count).to eq 1
+  end
+
   scenario 'and remove from favourites' do
     recipe = create(:recipe)
 

@@ -4,19 +4,19 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1><%= @recipe.name %> <%= t :by %> <%= link_to @recipe.user.email, user_url(@recipe.user) %></h1>
+    <h1><%= link_to @recipe.name, recipe_url(@recipe) %> <%= t :by %> <%= link_to @recipe.user.email, user_url(@recipe.user) %></h1>
     <table>
       <tr>
-        <td>
+        <td style="padding: 20px; vertical-align: top;">
           <%= simple_format @recipe.ingredients %>
         </td>
-        <td>
+        <td style="padding: 20px;">
           <%= simple_format @recipe.directions %>
         </td>
       </tr>
     </table>
     <p>
-      Acesse o link para mais informações <%= recipe_url(@recipe) %>.
+      Acesse o link para mais informações <%= link_to @recipe.name, recipe_url(@recipe) %>.
     </p>
     <p>Espero que goste, tenha uma bom dia!</p>
     <p> <%= @user.name %> </p>
