@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :favourite, :destroy]
+  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :favourite, :destroy, :send]
   before_action :set_categories, only: [:show, :index, :new, :edit, :update, :create, :favourite, :destroy]
 
   def show
@@ -58,6 +58,12 @@ class RecipesController < ApplicationController
       @recipe.save
       redirect_to @recipe, notice: t(:succefully_remove_favorite)
     end
+  end
+
+  def mail
+    @recipe = Recipe.find(params[:id])
+    RecipeMailer.recipe_email(@recipe, current_user).deliver_now
+    redirect_to @recipe, notice: t(:sent)
   end
 
   private

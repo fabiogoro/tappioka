@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     member do
       post 'favourite'
       delete 'favourite'
+      post 'mail'
     end
   end
   resources :cuisines, only: [:new, :create, :show, :index] do

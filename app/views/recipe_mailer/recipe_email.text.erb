@@ -1,0 +1,7 @@
+
+<%= @recipe.name %> <%= t :by %> <%= link_to @recipe.user.email, user_path(@recipe.user) %>
+          <%=  @recipe.ingredients %>
+          <%=  @recipe.directions %>
+      Acesse o link para mais informações <%= recipe_path(@recipe) %>.
+    Espero que goste, tenha uma bom dia!
+    <%= @user.name %>

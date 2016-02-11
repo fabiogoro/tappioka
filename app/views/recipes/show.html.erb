@@ -55,6 +55,9 @@
         </td>
       </tr>
     </table>
+    <div>
+      <%= link_to t(:send), mail_recipe_path(@recipe), method: "post", class: "btn btn-info" %>
+    </div>
     <div class="btn-group pull-right">
       <%= link_to t(:back), root_path, class: "btn btn-danger" %>
       <%= link_to t(:add_favourite), favourite_recipe_path(@recipe), method: "post", class: "btn btn-primary" if current_user && !@recipe.fans.exists?(current_user.id) %>
