@@ -19,7 +19,7 @@ feature 'User edits recipe' do
     user = create(:user, email: 'ze@gmail.com')
     recipe = create(:recipe, user: user)
 
-    user = create(:user)
+    create(:user)
     login
     visit edit_recipe_path(recipe)
 

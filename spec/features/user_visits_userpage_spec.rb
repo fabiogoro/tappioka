@@ -17,7 +17,7 @@ feature 'User visits userpage' do
 
   scenario 'and sees his personal info' do
     user = create(:user)
-    recipe = create(:recipe, user: user)
+    create(:recipe, user: user)
 
     visit user_path(user)
 
@@ -28,7 +28,7 @@ feature 'User visits userpage' do
   end
 
   scenario 'and see favourite recipes' do
-    creator_user = create(:user, email: "ze@gmail.com")
+    creator_user = create(:user, email: 'ze@gmail.com')
     recipe = create(:recipe, user: creator_user)
 
     logged_user = create(:user)

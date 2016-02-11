@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Admin creates cuisine' do
   scenario 'successfully' do
-    user = create(:user, is_admin: true)
+    create(:user, is_admin: true)
     cuisine = build(:cuisine)
 
     login
@@ -15,8 +15,8 @@ feature 'Admin creates cuisine' do
   end
 
   scenario 'and is not admin' do
-    user = create(:user, is_admin: false)
-    cuisine = build(:cuisine)
+    create(:user, is_admin: false)
+    build(:cuisine)
 
     login
     visit new_type_path

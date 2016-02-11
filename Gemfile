@@ -26,6 +26,7 @@ end
 
 group :development do
   gem 'spring'
+  gem 'rubocop', require: false
   gem 'simplecov', require: false
 end
 

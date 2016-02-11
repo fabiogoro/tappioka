@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Admin creates type' do
   scenario 'successfully' do
-    user = create(:user, is_admin: true)
+    create(:user, is_admin: true)
     type = build(:type)
 
     login
@@ -15,8 +15,8 @@ feature 'Admin creates type' do
   end
 
   scenario 'and is not admin' do
-    user = create(:user, is_admin: false)
-    type = build(:type)
+    create(:user, is_admin: false)
+    build(:type)
 
     login
     visit new_type_path

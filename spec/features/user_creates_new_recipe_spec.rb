@@ -25,7 +25,7 @@ feature 'User creates new recipe' do
   end
 
   scenario 'without logging in' do
-    recipe = build(:recipe)
+    build(:recipe)
 
     visit new_recipe_path
 

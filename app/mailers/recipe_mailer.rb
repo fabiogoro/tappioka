@@ -5,6 +5,7 @@ class RecipeMailer < ApplicationMailer
     @recipe = recipe
     @user = user
     @email = email
-    mail(to: @email, subject: "Estou compartilhando uma receita: "+@recipe.name)
+    mail(to: @email,
+         subject: 'Estou compartilhando uma receita: ' + @recipe.name)
   end
 end

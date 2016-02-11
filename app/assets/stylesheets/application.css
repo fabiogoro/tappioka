@@ -25,6 +25,13 @@
    padding-right: 10px;
  }
 
+ .info h4, .info p{
+   width: 180px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ }
+
  .recipe-main{
    color: inherit;
  }
@@ -38,10 +45,6 @@
    margin-bottom: 10px;
    padding-top: 10px;
    border-radius: 10px;
-   width: 310px;
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
  }
 
  .cuisine{

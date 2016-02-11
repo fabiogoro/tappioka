@@ -1,6 +1,9 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :favourite, :destroy, :mail]
-  before_action :set_categories, only: [:show, :index, :new, :edit, :update, :create, :favourite, :destroy]
+  before_action :authenticate_user!, only: [:create, :new, :edit,
+                                            :update, :favourite,
+                                            :destroy, :mail]
+  before_action :set_categories, only: [:show, :index, :new, :edit,
+                                        :update, :create, :favourite, :destroy]
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -49,14 +52,10 @@ class RecipesController < ApplicationController
 
   def favourite
     @recipe = Recipe.find(params[:id])
-    unless @recipe.fans.exists?(current_user.id)
-      @recipe.fans << current_user
-      @recipe.save
-      redirect_to @recipe, notice: t(:succefully_add_favorite)
+    if @recipe.fans.exists?(current_user.id)
+      favourite_destroy
     else
-      @recipe.fans.delete(current_user)
-      @recipe.save
-      redirect_to @recipe, notice: t(:succefully_remove_favorite)
+      favourite_create
     end
   end
 
@@ -71,15 +70,22 @@ class RecipesController < ApplicationController
   private
     def recipe_params
       params.require(:recipe).permit(:name,
-                                     :cuisine_id,
-                                     :type_id,
-                                     :preference_id,
-                                     :ingredients,
-                                     :servings,
-                                     :directions,
-                                     :ready_in,
-                                     :difficulty,
-                                     :photo,
-                                     :photo_cache)
+                                     :cuisine_id, :type_id,
+                                     :preference_id, :ingredients,
+                                     :servings, :directions,
+                                     :ready_in, :difficulty,
+                                     :photo, :photo_cache)
+    end
+
+    def favourite_destroy
+      @recipe.fans.delete(current_user)
+      @recipe.save
+      redirect_to @recipe, notice: t(:succefully_remove_favorite)
+    end
+
+    def favourite_create
+      @recipe.fans << current_user
+      @recipe.save
+      redirect_to @recipe, notice: t(:succefully_add_favorite)
     end
 end

@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :type do
-    name "Sobremesa"
+    name 'Sobremesa'
   end
 end

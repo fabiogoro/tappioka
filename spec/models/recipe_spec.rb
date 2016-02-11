@@ -12,6 +12,5 @@ describe Recipe, type: :model do
     expect(recipe.servings).to eq 10
     expect(recipe.ready_in).to eq 10.minutes
     expect(recipe.ingredients).to eq '1 lata de leite condensado'
-    expect(recipe.directions).to eq 'Esquente a lata em banho maria por 15 minutos. Espere esfriar e abra a lata'
   end
 end

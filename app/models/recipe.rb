@@ -9,9 +9,9 @@ class Recipe < ActiveRecord::Base
 
   def self.order_by_favourites(order = nil)
     if order == :asc
-      self.all.sort_by{|recipe| recipe.fans.size}
+      all.sort_by { |recipe| recipe.fans.size }
     else
-      self.all.sort_by{|recipe| -recipe.fans.size}
+      all.sort_by { |recipe| -recipe.fans.size }
     end
   end
 end

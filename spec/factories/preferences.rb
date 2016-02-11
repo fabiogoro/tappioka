@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :preference do
-    name "Vegetariana"
+    name 'Vegetariana'
   end
 end

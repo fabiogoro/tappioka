@@ -11,10 +11,18 @@ class ApplicationController < ActionController::Base
 
   private
     def configure_permitted_parameters
+      configure_sign_up
+      configure_update
+    end
+
+    def configure_sign_up
       devise_parameter_sanitizer.for(:sign_up) << :name
       devise_parameter_sanitizer.for(:sign_up) << :city
       devise_parameter_sanitizer.for(:sign_up) << :facebook
       devise_parameter_sanitizer.for(:sign_up) << :twitter
+    end
+
+    def configure_update
       devise_parameter_sanitizer.for(:account_update) << :name
       devise_parameter_sanitizer.for(:account_update) << :city
       devise_parameter_sanitizer.for(:account_update) << :facebook

@@ -21,19 +21,27 @@ class CuisinesController < ApplicationController
 
   def like
     @cuisine = Cuisine.find(params[:id])
-    unless @cuisine.users.exists?(current_user.id)
-      @cuisine.users << current_user
-      @cuisine.save
-      redirect_to cuisines_path, notice: t(:succefully_add_cuisine)
+    if @cuisine.users.exists?(current_user.id)
+      like_destroy
     else
-      @cuisine.users.delete(current_user)
-      @cuisine.save
-      redirect_to cuisines_path, notice: t(:succefully_remove_cuisine)
+      like_create
     end
   end
 
   private
     def cuisine_params
       params.require(:cuisine).permit(:name)
+    end
+
+    def like_destroy
+      @cuisine.users.delete(current_user)
+      @cuisine.save
+      redirect_to cuisines_path, notice: t(:succefully_remove_cuisine)
+    end
+
+    def like_create
+      @cuisine.users << current_user
+      @cuisine.save
+      redirect_to cuisines_path, notice: t(:succefully_add_cuisine)
     end
 end

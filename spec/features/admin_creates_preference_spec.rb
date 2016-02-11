@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Admin creates preference' do
   scenario 'successfully' do
-    user = create(:user, is_admin: true)
+    create(:user, is_admin: true)
     preference = build(:preference)
 
     login
@@ -15,12 +15,12 @@ feature 'Admin creates preference' do
   end
 
   scenario 'and is not admin' do
-    user = create(:user, is_admin: false)
-    preference = build(:preference)
+    create(:user, is_admin: false)
+    build(:preference)
 
     login
     visit new_type_path
 
-    expect(page).to have_content "Você não pode criar categorias pois não é administrador."
+    expect(page).to have_content 'Você não pode criar categorias pois não é administrador.'
   end
 end
